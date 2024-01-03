@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { Routes, Route, Link } from 'react-router-dom';
+import IronManGiphy from './container/ironmanGiphy';
+import SearchGiphy from './container/searchGiphy';
+import logo from '../src/assets/logo.png'
+import './App.css'
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <div className='app__welcome'>
+        <h1>Welcome to Your Giphy</h1>
+        <img src={logo} alt='logo' />
+        <nav>
+          <ul>
+            <li>
+              <Link to="/ironMan">IRON MAN GIPHY</Link>
+            </li>
+            <li>
+              <Link to="/search">SEARCH YOUR GIPHY</Link>
+            </li>
+          </ul>
+        </nav>
+
+        <Routes>
+          <Route path="/ironMan" element={<IronManGiphy />} />
+          <Route path="/search" element={<SearchGiphy />} />
+        </Routes>
+      </div>
   );
-}
+};
 
 export default App;
+

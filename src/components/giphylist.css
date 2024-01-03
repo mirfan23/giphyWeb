@@ -1,0 +1,14 @@
+.giphy-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30%, 1fr)); /* Membuat 3 kolom responsif */
+    gap: 20px;
+    justify-content: center;
+    max-width: 100%;
+    padding: 1rem 0;
+  }
+  .giphy-img {
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+    object-fit: cover;
+  }
